@@ -1,0 +1,32 @@
+ul{
+    list-style: none;
+}
+
+img{
+    display: block;
+}
+
+.small-img{
+    display: flex;
+}
+
+@media screen and (min-width: 768px){
+    .small-img{
+        display: block;
+    }
+    .img-list{
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: flex-end;
+    }
+}
+
+@media screen and (min-width: 1400px){
+    .small-img{
+        display: flex;
+    }
+    .img-list{
+        flex-direction: row;
+        justify-content: flex-start;
+    }
+}
