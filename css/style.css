@@ -1,32 +1,106 @@
-ul{
-    list-style: none;
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-img{
-    display: block;
+:root {
+  --accent-color: #0a5f59;
+  --accent-color-400: #0f8d84;
+  --bg-color: #fdcf6f;
+  --dash-color: #fffcf1;
+  --text-color: #050e27;
+  --border-radius: 10px;
+  --border-color: #e1dfd4;
 }
 
-.small-img{
-    display: flex;
+html,
+body {
+  height: 100%;
 }
 
-@media screen and (min-width: 768px){
-    .small-img{
-        display: block;
-    }
-    .img-list{
-        display: flex;
-        flex-direction: row-reverse;
-        justify-content: flex-end;
-    }
+body {
+  font-family: system-ui;
+  display: grid;
+  place-items: center;
+  background-color: var(--bg-color);
+  background-image: radial-gradient(var(--dash-color), 30%, var(--bg-color));
 }
 
-@media screen and (min-width: 1400px){
-    .small-img{
-        display: flex;
-    }
-    .img-list{
-        flex-direction: row;
-        justify-content: flex-start;
-    }
+.container {
+  isolation: isolate;
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 100%;
+  max-width: 800px;
+  min-height: 650px;
+  overflow: hidden;
+}
+
+.card {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  font-size: 3rem;
+  line-height: 1;
+  text-transform: uppercase;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 10px;
+  width: 80%;
+  max-width: 400px;
+  min-height: 500px;
+  will-change: transform;
+  transform: translateX(var(--xVal));
+  z-index: var(--z-index);
+  transition: transform 350ms ease;
+  overflow: hidden;
+  color: var(--dash-color);
+  isolation: isolate;
+
+  
+}
+
+.card h3 {
+  font-weight: 100;
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(hsl(0, 0%, 0%, 0) 50%, hsl(0, 0%, 0%, 1));
+  mix-blend-mode: multiply;
+  z-index: -1;
+}
+
+.buttons {
+  position: absolute;
+  bottom: 10px;
+  z-index: 1000;
+}
+
+button {
+  padding: 0.6rem 1rem;
+  border: 0;
+  flex: 1;
+  background-color: var(--accent-color);
+  color: var(--dash-color);
+  border-radius: 100vh;
+  letter-spacing: 1px;
+  transition: 350ms ease;
+}
+
+button:last-child {
+  margin-left: 0.5rem;
+}
+
+button:hover {
+  background-color: var(--accent-color-400);
+  cursor: pointer;
 }
