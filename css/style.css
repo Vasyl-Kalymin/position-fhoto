@@ -26,13 +26,12 @@ body {
   place-items: center;
 }
 
-.container {
+.swiper-container {
   isolation: isolate;
   position: relative;
   display: grid;
-  width: 100%;
-  max-width: 700px;
-  min-height: 650px;
+  max-width: px;
+  height: 650px;
   overflow: hidden;
 }
 
@@ -49,8 +48,8 @@ body {
   background-repeat: no-repeat;
   border-radius: 10px;
   width: 80%;
-  max-width: 400px;
-  min-height: 500px;
+  width: 436px;
+  height: 580px;
   will-change: transform;
   transform: translateX(var(--xVal));
   z-index: var(--z-index);
@@ -70,32 +69,19 @@ body {
   z-index: -1;
 }
 
-.buttons {
+.swiper-buttons {
   position: absolute;
   bottom: 10px;
   z-index: 1000;
 }
 
-button {
+.swiper-button-left, 
+.swiper-button-right {
   padding: 0.6rem 1rem;
-  border: 0;
-  flex: 1;
-  background-color: var(--accent-color);
-  color: var(--dash-color);
   border-radius: 100vh;
   letter-spacing: 1px;
-  transition: 350ms ease;
-}
-
-button:last-child {
-  margin-left: 0.5rem;
-}
-
-button:hover {
-  background-color: var(--accent-color-400);
   cursor: pointer;
 }
-
 
 .wrapper{
     display: flex;
@@ -104,4 +90,8 @@ button:hover {
 
 h1{
     margin-right: 40px;
+}
+
+.container-swiper{
+  width: 686px;
 }

@@ -2,7 +2,7 @@ console.clear();
 const bgUrls = [
   
 ];
-const container = document.querySelector(".container");
+const container = document.querySelector(".swiper-container");
 const cards = document.querySelectorAll(".card");
 let xVal = 0;
 let xRate = 120;
